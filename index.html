@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+
+    <script src="mtg.js"></script>
+    <script src="modal.js"></script>
+    <link rel="stylesheet" type="text/css" href="mtg.css" />
+
+</head>
+<body>
+    <noscript><!--politely informs user that there is no javascript-->
+        <div class="JSwarning">
+
+            <h1>Hello!</h1>
+            <p>
+
+                <i>This application heavily relies on the use of Javascript,
+                so you might want to enable it before pushing all the buttons you see on this page.
+                </i><span class="sarcastic">Or do. I'm not your boss.</span>
+
+            </p><p>
+
+                Javascript may have been disabled on your device for security reasons,
+                but if not, <a href="https://enable-javascript.com/">click here</a> to find out how to enable Javascript.
+
+            </p>
+
+        </div>
+    </noscript>
+
+    <div id="myModal" class="modal" onclick="closeModal()"><!--pop-up modal window that is hidden by default and is displayed 
+                                                           with multiple buttons-->
+        <div class="modalContent">
+            <button onclick="closeModal();">CLOSE </button><BR><span id="desctext">
+                This window will display the following:
+
+                <ul>
+                    <!-- apparently, "element 'ul' cannot be nested inside element 'span'"
+                    according to visual studio but this seems to work fine and is supported by HTML 5 anyway.
+                    https://stackoverflow.com/questions/30094633/div-cannot-be-nested-inside-ul-and-li-cannot-be-nested-inside-div -->
+                    <li>What you can do on the current phase</li>
+                    <li>What cards can be played</li>
+                    <li>Gameplay tips for the current phase</li>
+                </ul>
+
+            </span><br /><br />
+            <span id="legalcards"></span>
+        </div>
+    </div>
+
+    <section class="nextphasecontainer">
+        <!--contains both the next button and current phase display-->
+        <div class="nextbox">
+            <button id="next" onclick="progress()">Next<br>&#8594;</button> <!--next button-->
+        </div>
+        <div class="phasetext">
+            <span id="phase">Phase</span> <!--current phase-->
+        </div>
+    </section>
+
+    <div class="turnplayinfo">
+        <!--displays for current player and current turn-->
+        <div class="playerbox">Player: <span id="player"></span></div>
+        <div class="turnbox">Turn: <span id="Turncount"></span></div>
+    </div>
+
+    <section class="utils">
+        <!--utility buttons-->
+        <div class="helpme">
+            <button id="infobutt" onclick="openModal(); helptext();">?</button>
+        </div>
+        <div class="skipbox">
+            <button id="skipper" onclick="turnskip()">Skip</button> 
+        </div>
+        <img class="coiny" id="flipme" onclick="coin()" src="whitemana.png">
+    </section>
+
+    <section class="lifes">
+        <div class="p1lifebox">
+            <!--buttons for health-->
+            <img class="heart" src="heartplus.png" onclick="p1healthup()">
+            <p><span id="life1hold">+0</span></p>
+            <img class="heart" src="heartminus.png" onclick="p1healthdown()">
+            <p class="lifetotal">Player 1 life: <br><span id="p1life">20</span></p>
+        </div>
+        <div class="p2lifebox">
+            <!--buttons for health-->
+            <img class="heart" src="heartplus.png" onclick="p2healthup()">
+            <p><span id="life2hold">+0</span></p>
+            <img class="heart" src="heartminus.png" onclick="p2healthdown()">
+            <p class="lifetotal">Player 2 life: <br><span id="p2life">20</span></p>
+        </div>
+    </section>
+    <p><span id="pending"></span></p> <!--text to inform user that you need to progress the phase before you can remove or add health-->
+    <button onclick="ays()">Reset</button>
+    <button class="helpbutton" onclick="about()">How to use this app</button>
+</body>
+</html>
