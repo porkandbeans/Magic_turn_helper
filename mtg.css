@@ -1,0 +1,177 @@
+/*
+    Background Picture: https://www.deviantart.com/alexesn/art/AVATAR-Movie-Leather-Texture-152055783?d=258&modal=welcomeback
+    White mana symbol: https://cdn11.bigcommerce.com/s-sq9zkarfah/products/109819/images/134323/Magic-The-Gathering-White-Mana-997-Decal__63752.1510888204.500.750.jpg?c=2
+    MTG color icons: https://img1.etsystatic.com/004/2/6913442/il_fullxfull.385905579_lvtj.jpg
+    Heart graphic: https://4.bp.blogspot.com/_162jLa8kOgs/TRlG3mt2lSI/AAAAAAAABiE/Cz5xnHXGMhA/s1600/645px-love_heart_svgsvg.png
+    coin flip: https://freesound.org/people/Sojan/sounds/334301/
+    coin land: https://freesound.org/people/GOSFX/sounds/323403/
+    tap: https://freesound.org/people/SpiceProgram/sounds/387219/
+    NOTE TO SELF: don't put sources here if you do a lot of ctrl+A, ctrl+C and ctrl+V.
+*/
+
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    margin: 0;
+    background-image: url("bg_texture.jpg");
+}
+
+.nextbox {
+    display: inline-block;
+}
+
+.phasetext {
+    display: inline-block;
+    text-align: center;
+    padding: 20px 10%;
+    font-size: 20px;
+    vertical-align: middle;
+    margin-bottom: -20px; /*centers the text*/
+}
+
+.nextphasecontainer {
+    display: inline-block;
+    background-color: white;
+    width: 100%;
+}
+
+button {
+    font-size: 20px;
+    font-family: Impact, Charcoal, sans-serif;
+    height: 70px;
+    width: 70px;
+}
+
+.playerbox, .turnbox {
+    display: inline-block;
+    background-color: white;
+    font-size: 20px;
+    padding: 8px 20px;
+    margin: 10px 10px;
+}
+
+.playerbox {
+    margin-right: 30px;
+}
+
+.turnbox {
+    margin-left: 30px;
+}
+
+.utils {
+    display: block;
+    text-align: center;
+    width: 100%
+}
+
+.coiny {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin-bottom: -32px;
+    /*https://stackoverflow.com/questions/14425225/html-image-in-same-line-appearing-slightly-above-text */
+}
+
+
+.modal {
+    /*https://www.w3schools.com/howto/howto_css_modals.asp */
+    display: none; /*hides by default*/
+    z-index: 1; /*puts it on top*/
+    width: 100%;
+    height: 100%;
+    position: fixed; /*stops it from moving with the rest of the content*/
+    background-color: rgba(0,0,0,0.4); /*black with transparency*/
+    overflow: auto; /*enables scrolling*/
+    padding-top: 20px; /*seperates the window from the top of the webpage*/
+}
+
+.modalContent {
+    margin: auto; /*centers window*/
+    padding: 10px;
+    border: 1px solid black;
+    width: 90%;
+    background-color: white;
+    padding-bottom: 50px; /*encountered a problem where the content extended beyond the reach of the scrollbar,
+        so I added some padding on the bottom so that the text could be read*/
+}
+
+.turnplayinfo {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.helpme, .skipbox {
+    display: inline-block;
+}
+
+.lifes {
+    margin-top: 20px;
+}
+
+.p1lifebox, .p2lifebox {
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+}
+
+.life {
+    width: 100px;
+    margin-right: 0;
+    margin-left: 0;
+    font-size: 35px;
+}
+
+p {
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    margin: 0;
+}
+
+.sarcastic {
+    font-size: 12px;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+}
+
+.JSwarning {
+    background-color: Highlight;
+    color: white;
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.heart {
+    width: 60px;
+    height: 60px;
+}
+
+.ynbutt {
+    margin: 0 30px;
+}
+
+.lifetotal {
+    background-color: white;
+    color: black;
+    padding: 6px 0;
+    margin: 4px auto;
+    width: 70%;
+    text-align: center;
+}
+
+#p1life, #p2life {
+    font-size: 35px;
+}
+
+.helpbutton {
+    float: right;
+    width: 45%;
+}
+
+#life1hold, #life2hold {
+    font-size: 35px;
+}
